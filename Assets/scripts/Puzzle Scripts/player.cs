@@ -44,10 +44,7 @@ public class player : MonoBehaviour
         RaycastHit hitWall;
         RaycastHit hitEmpty;
 
-        if (!Physics.Raycast(transform.position + transform.forward * direction, Vector3.down, out hitEmpty, 1)){
-            Debug.Log("is falling!");
-            transform.position += transform.forward * direction;
-        }else if (Physics.Raycast(transform.position + transform.up, transform.forward * direction, out hitWall, 1)){
+        if (Physics.Raycast(transform.position + transform.up, transform.forward * direction, out hitWall, 1)){
             Debug.Log("is hitting a wall!");
             if (hitWall.collider.gameObject.tag == "Portal"){
                 Debug.Log("is hitting a portal!");
@@ -56,6 +53,9 @@ public class player : MonoBehaviour
         }else if (Physics.Raycast(transform.position, transform.forward * direction, out hitMove, 1)){
             transform.position += transform.forward * direction; 
             transform.position += transform.up;
+        }else if (!Physics.Raycast(transform.position + transform.forward * direction, Vector3.down, out hitEmpty, 1)){
+            Debug.Log("is falling!");
+            transform.position += transform.forward * direction;
         }else{
             transform.position += transform.forward * direction;
         }
