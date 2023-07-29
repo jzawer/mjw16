@@ -17,6 +17,5 @@ public class WorldPlayerMovement : MonoBehaviour
         var _verticalInput = Input.GetAxisRaw("Vertical");
         Vector3 movement = new Vector3(_horizontalInput, 0, _verticalInput);
         _rigidbody.AddForce(movement * speed);
-
     }
 }

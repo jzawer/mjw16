@@ -8,9 +8,12 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField]
     private GameObject _credits;
+    [SerializeField]
+    private CanvasGroup canvas;
 
     public void OnStartClick()
     {
+        canvas.alpha = 0;
         FindObjectOfType<ScenesManager>().FadeToLevel("World");
     }
 
