@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveSwitcher : BaseAction
+public class doMove : BaseAction
 {
     private int direction = 1;
     private bool isActive = false;
