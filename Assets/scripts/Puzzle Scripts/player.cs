@@ -44,7 +44,7 @@ public class player : MonoBehaviour
         RaycastHit hitWall;
         RaycastHit hitEmpty;
 
-        if (Physics.Raycast(transform.position + transform.up, transform.forward * direction, out hitWall, 1)){
+        if (Physics.Raycast(transform.position + transform.up, transform.forward * direction, out hitWall, 1) && (Physics.Raycast(transform.position, transform.forward * direction, out hitMove, 1))){
             Debug.Log("is hitting a wall!");
             if (hitWall.collider.gameObject.tag == "Portal"){
                 Debug.Log("is hitting a portal!");
