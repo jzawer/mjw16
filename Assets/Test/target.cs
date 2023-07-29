@@ -5,15 +5,17 @@ using UnityEngine;
 public class target : MonoBehaviour
 {
     public bool status = false;
-    // Start is called before the first frame update
-    void Start()
+
+    public void doTargetAction()
     {
+        status = !status;
+
+        foreach (Transform child in transform)
+        {
+
+            child.GetComponent<BaseAction>().DoAction();
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

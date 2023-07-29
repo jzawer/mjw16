@@ -2,30 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActiveSwitcher : MonoBehaviour
+public class doSwitch : BaseAction
 {
-    private bool isActive = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public override void DoAction()
     {
-        // get var status from script target in parent
-        isActive = transform.parent.GetComponent<target>().status;
-        
+        status = transform.parent.GetComponent<target>().status;
+
+        gameObject.SetActive(status);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-                isActive = transform.parent.GetComponent<target>().status;
-
-        // if is active, object is active if not is not active
-        if (isActive){
-            gameObject.SetActive(true);
-        }else{
-            gameObject.SetActive(false);
-        }
-    }
-
 
 }

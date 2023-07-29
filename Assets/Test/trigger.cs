@@ -22,8 +22,7 @@ public class trigger : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if (other.gameObject.tag == "Player"){
             foreach (GameObject obj in objectsToSwitch){
-                obj.GetComponent<target>().status = !obj.GetComponent<target>().status;
-
+                obj.GetComponent<target>().doTargetAction();
             }
         }
     }

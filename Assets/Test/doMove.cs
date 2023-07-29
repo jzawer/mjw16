@@ -2,20 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveSwitcher : MonoBehaviour
+public class MoveSwitcher : BaseAction
 {
     private int direction = 1;
     private bool isActive = false;
 
-    void Start()
-    {
-        isActive = transform.parent.GetComponent<target>().status;
-    }
 
     void Update()
     {
-        isActive = transform.parent.GetComponent<target>().status;
-
         if (isActive){
             if (transform.position.y < -2f){
                 direction = 1;
@@ -27,5 +21,10 @@ public class MoveSwitcher : MonoBehaviour
             Debug.Log("is moving!");
             transform.position += Vector3.up * direction * Time.deltaTime;
         }
+    }
+
+    public override void DoAction()
+    {
+        isActive = transform.parent.GetComponent<target>().status;
     }
 }
