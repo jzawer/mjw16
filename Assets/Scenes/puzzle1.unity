@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -60343,18 +60343,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 515806666}
     m_Modifications:
     - target: {fileID: 795047265369312027, guid: febbea977631648d0a22ea8aadb3eb61, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 795047265369312027, guid: febbea977631648d0a22ea8aadb3eb61, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 795047265369312027, guid: febbea977631648d0a22ea8aadb3eb61, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 795047265369312027, guid: febbea977631648d0a22ea8aadb3eb61, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.866634
       objectReference: {fileID: 0}
@@ -60394,10 +60382,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 795047265369312027, guid: febbea977631648d0a22ea8aadb3eb61, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2134307931361416222, guid: febbea977631648d0a22ea8aadb3eb61, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -60405,10 +60389,6 @@ PrefabInstance:
     - target: {fileID: 5158302999220380818, guid: febbea977631648d0a22ea8aadb3eb61, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8619705242079306000, guid: febbea977631648d0a22ea8aadb3eb61, type: 3}
-      propertyPath: m_Constraints
-      value: 122
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -74268,6 +74248,7 @@ GameObject:
   - component: {fileID: 1817044150}
   - component: {fileID: 1817044149}
   - component: {fileID: 1817044148}
+  - component: {fileID: 1817044151}
   m_Layer: 0
   m_Name: Final (1)
   m_TagString: Untagged
@@ -74361,6 +74342,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817044146}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1817044151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817044146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0283369b58b16e4ca71dc645716297f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
 --- !u!1 &1817368242
 GameObject:
   m_ObjectHideFlags: 0
