@@ -7,7 +7,6 @@ public class doMove : BaseAction
 {
     private int direction = 1;
     private bool isActive = false;
-    private bool isMoving = false;
     public float down = 1f;
     public float up = 1f;
 
