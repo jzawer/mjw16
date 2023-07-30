@@ -299,7 +299,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 97ea46457a0744ea6a4a33563d2ebe0f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -399,36 +399,36 @@ MonoBehaviour:
   sounds:
   - name: button
     clip: {fileID: 8300000, guid: 0da13ccb8a1b74a018ad7d7fe71ba6fc, type: 3}
-    volume: 0
+    volume: 0.3
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: jump
     clip: {fileID: 8300000, guid: 0d25762fe70294852b9ac3083672690e, type: 3}
-    volume: 0
+    volume: 0.3
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: fall
     clip: {fileID: 8300000, guid: e418c54ae00c143c4b834ec050d9d5e9, type: 3}
-    volume: 0
+    volume: 0.3
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: finish
     clip: {fileID: 8300000, guid: 198ee0857a6904881b85f8a889804c95, type: 3}
-    volume: 0
+    volume: 0.4
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
