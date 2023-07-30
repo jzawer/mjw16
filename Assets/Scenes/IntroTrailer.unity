@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863cba433c587404bbf75d1f7050690c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: World
   player: {fileID: 967956796}
 --- !u!1 &975848704
 GameObject:

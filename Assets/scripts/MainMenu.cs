@@ -23,4 +23,9 @@ public class MainMenu : MonoBehaviour
         _credits.SetActive(!_credits.activeSelf);
         FindObjectOfType<AudioManager>().Play("button");
     }
+
+    public void OnViewLastSceneClick()
+    {
+        FindObjectOfType<ScenesManager>().FadeToLevel("EndVideoFromMenu");
+    }
 }

@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroTrailer.unity
     guid: 05bab061932179d40b9da88db6768640
+  - enabled: 1
+    path: Assets/Scenes/EndVideo.unity
+    guid: 7121686257ad2b740be1994e66b9dba3
+  - enabled: 1
+    path: Assets/Scenes/EndVideoFromMenu.unity
+    guid: 0b2f242e026341b44a96cb8bb36162bc
   m_configObjects: {}

@@ -6,6 +6,7 @@ using UnityEngine.Video;
 
 public class IntroVideo : MonoBehaviour
 {
+    public string nextScene;
     public VideoPlayer player;
     private bool finished = false;
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class IntroVideo : MonoBehaviour
         if (Convert.ToInt32(player.frameCount) == Convert.ToInt32(player.frame) + 1 && !finished)
         {
             finished = true;
-            FindObjectOfType<ScenesManager>().FadeToLevel("World");
+            FindObjectOfType<ScenesManager>().FadeToLevel(nextScene);
         }
     }
 }
