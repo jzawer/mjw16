@@ -9,7 +9,7 @@ public class player : MonoBehaviour
     const string IS_MOVING = "isMoving";
 
     public GameObject spawnPoint;
-    private Animator? _animator;
+    private Animator _animator;
     private bool isMoving = false;
 
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class player : MonoBehaviour
 
         if (GetComponent<Rigidbody>().velocity.y > -0.5)
         {
-            _animator?.SetBool(IS_FALLING, false);
+            _animator.SetBool(IS_FALLING, false);
         }
 
         _animator?.SetBool(IS_MOVING, false);
@@ -68,23 +68,23 @@ public class player : MonoBehaviour
         }else if (Physics.Raycast(transform.position, transform.forward * direction, out hitMove, 1))
         {
             toggleIsMoving();
-            _animator?.SetBool(IS_MOVING, true);
+            _animator.SetBool(IS_MOVING, true);
             var endPosition = transform.position + (transform.forward * direction) + transform.up;
-            transform.DOMove(endPosition, .5f).OnComplete(toggleIsMoving);
+            transform.DOMove(endPosition, .3f).OnComplete(toggleIsMoving);
             FindObjectOfType<AudioManager>().Play("jump");
         }else if (!Physics.Raycast(transform.position + transform.forward * direction, Vector3.down, out hitEmpty, 1)){
             Debug.Log("is falling!");
             FindObjectOfType<AudioManager>().Play("fall");
             toggleIsMoving();
-            _animator?.SetBool(IS_FALLING, true);
+            _animator.SetBool(IS_FALLING, true);
             var endPosition = transform.position + (transform.forward * direction);
-            transform.DOMove(endPosition, .5f).OnComplete(toggleIsMoving);
+            transform.DOMove(endPosition, .3f).OnComplete(toggleIsMoving);
         }
         else{
-            _animator?.SetBool(IS_MOVING, true);
+            _animator.SetBool(IS_MOVING, true);
             toggleIsMoving();
             var endPosition = transform.position + (transform.forward * direction);
-            transform.DOMove(endPosition, .5f).OnComplete(toggleIsMoving);
+            transform.DOMove(endPosition, .3f).OnComplete(toggleIsMoving);
         }
     }
 

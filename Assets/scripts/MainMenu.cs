@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     public void OnStartClick()
     {
         canvas.alpha = 0;
-        FindObjectOfType<ScenesManager>().FadeToLevel("World");
+        FindObjectOfType<ScenesManager>().FadeToLevel("IntroTrailer");
         FindObjectOfType<AudioManager>().Play("button");
     }
 
