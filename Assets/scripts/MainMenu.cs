@@ -15,10 +15,12 @@ public class MainMenu : MonoBehaviour
     {
         canvas.alpha = 0;
         FindObjectOfType<ScenesManager>().FadeToLevel("World");
+        FindObjectOfType<AudioManager>().Play("button");
     }
 
     public void OnCreditsClick()
     {
         _credits.SetActive(!_credits.activeSelf);
+        FindObjectOfType<AudioManager>().Play("button");
     }
 }

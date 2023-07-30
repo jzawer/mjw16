@@ -28,6 +28,7 @@ public class doMove : BaseAction
 
     public override void DoAction()
     {
+        FindObjectOfType<AudioManager>().Play("button");
         isActive = transform.parent.GetComponent<target>().status;
     }
 }

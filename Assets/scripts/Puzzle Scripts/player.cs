@@ -71,8 +71,10 @@ public class player : MonoBehaviour
             _animator?.SetBool(IS_MOVING, true);
             var endPosition = transform.position + (transform.forward * direction) + transform.up;
             transform.DOMove(endPosition, .5f).OnComplete(toggleIsMoving);
+            FindObjectOfType<AudioManager>().Play("jump");
         }else if (!Physics.Raycast(transform.position + transform.forward * direction, Vector3.down, out hitEmpty, 1)){
             Debug.Log("is falling!");
+            FindObjectOfType<AudioManager>().Play("fall");
             toggleIsMoving();
             _animator?.SetBool(IS_FALLING, true);
             var endPosition = transform.position + (transform.forward * direction);

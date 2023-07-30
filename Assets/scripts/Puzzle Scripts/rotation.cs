@@ -16,9 +16,9 @@ public class rotation : MonoBehaviour
     {
         // rotate object if key  q is pressed
         if (Input.GetKeyDown(KeyCode.Q)){
-            transform.Rotate(0, 90, 0);
-        }else if (Input.GetKeyDown(KeyCode.E)){
             transform.Rotate(0, -90, 0);
+        }else if (Input.GetKeyDown(KeyCode.E)){
+            transform.Rotate(0, 90, 0);
         }
         
     }

@@ -21,6 +21,7 @@ public class Collectionable : MonoBehaviour
             _inventory.ActiveKey(value, true);
             gameObject.SetActive(false);
             FindObjectOfType<ScenesManager>().FadeToLevel("World");
+            FindObjectOfType<AudioManager>().Play("finish");
         }
     }
 }
