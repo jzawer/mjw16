@@ -10,6 +10,7 @@ public class player : MonoBehaviour
 
     public GameObject spawnPoint;
     private Animator? _animator;
+    private bool isMoving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +28,17 @@ public class player : MonoBehaviour
          if (!Physics.Raycast(transform.position - transform.forward, Vector3.down, 1)){
              Debug.Log("There is nothing in DOWN / BACK of the object!");
          } */
+        if (isMoving)
+            return;
+
+        if (GetComponent<Rigidbody>().velocity.y > -0.5)
+        {
+            _animator?.SetBool(IS_FALLING, false);
+        }
 
         _animator?.SetBool(IS_MOVING, false);
         if (transform.position.y < -0.01f){
             if (transform.position.y < -10){
-                _animator?.SetBool(IS_FALLING, false);
                 transform.position = spawnPoint.transform.position;
                 transform.rotation = Quaternion.identity;
             }
@@ -52,8 +59,6 @@ public class player : MonoBehaviour
         RaycastHit hitWall;
         RaycastHit hitEmpty;
 
-        _animator?.SetBool(IS_MOVING, true);
-
         if (Physics.Raycast(transform.position + transform.up, transform.forward * direction, out hitWall, 1) && (Physics.Raycast(transform.position, transform.forward * direction, out hitMove, 1))){
             Debug.Log("is hitting a wall!");
             if (hitWall.collider.gameObject.tag == "Portal"){
@@ -62,19 +67,28 @@ public class player : MonoBehaviour
             }
         }else if (Physics.Raycast(transform.position, transform.forward * direction, out hitMove, 1))
         {
-            var endPosition = transform.position + (transform.forward * direction);
-            transform.DOMove(endPosition, 1);
-            transform.position += transform.up;
+            toggleIsMoving();
+            _animator?.SetBool(IS_MOVING, true);
+            var endPosition = transform.position + (transform.forward * direction) + transform.up;
+            transform.DOMove(endPosition, .5f).OnComplete(toggleIsMoving);
         }else if (!Physics.Raycast(transform.position + transform.forward * direction, Vector3.down, out hitEmpty, 1)){
             Debug.Log("is falling!");
+            toggleIsMoving();
             _animator?.SetBool(IS_FALLING, true);
             var endPosition = transform.position + (transform.forward * direction);
-            transform.DOMove(endPosition, 1);
+            transform.DOMove(endPosition, .5f).OnComplete(toggleIsMoving);
         }
         else{
+            _animator?.SetBool(IS_MOVING, true);
+            toggleIsMoving();
             var endPosition = transform.position + (transform.forward * direction);
-            transform.DOMove(endPosition, 1);
+            transform.DOMove(endPosition, .5f).OnComplete(toggleIsMoving);
         }
+    }
+
+    void toggleIsMoving()
+    {
+        isMoving = !isMoving;
     }
 
 }
